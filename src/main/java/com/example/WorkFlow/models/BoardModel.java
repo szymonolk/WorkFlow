@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +27,10 @@ public class BoardModel {
     @Getter
     private String boardName;
 
-    @OneToMany(mappedBy = "boardModel")
-    private List<TaskModel> taskModelList;
+    @Getter
+    @Setter
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "boardModel")
+    private List<TaskModel> taskModelLists = new ArrayList<TaskModel>();
+
 
 }

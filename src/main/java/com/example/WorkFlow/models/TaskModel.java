@@ -1,6 +1,7 @@
 package com.example.WorkFlow.models;
 
 import com.example.WorkFlow.enums.TaskStatusEnum;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,7 +37,7 @@ public class TaskModel {
     @Getter
     @Setter
     @ManyToOne
-    @JoinColumn(name = "board_id")
+    @JsonIgnore
     private BoardModel boardModel;
 
     @Override
