@@ -25,4 +25,9 @@ public class TaskController {
         return taskService.findAll();
     }
 
+    @PutMapping("assign/{boardId}/{taskId}")
+    public void addTaskToBoard(@PathVariable ("boardId") Long boardId,@PathVariable ("taskId") Long taskId){
+        taskService.addTaskToBoard(boardId, taskId);
+    }
+
 }
